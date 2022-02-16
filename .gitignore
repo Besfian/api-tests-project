@@ -42,7 +42,4 @@ target/
 /gradlew.bat
 .todo
 /build.gradle
-/src/test/java/ru/mail/besfian/config/
-/src/test/resources/config/
-/src/test/resources/schema/
-/src/test/resources/tpl/
+
