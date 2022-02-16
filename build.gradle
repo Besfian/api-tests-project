@@ -41,12 +41,9 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-    sourceCompatibility = 8
-    targetCompatibility = 8
 }
 
 tasks.withType(Test) {
-    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -55,26 +52,5 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
-    }
-}
-
-task high_priority_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "Critical"
-        includeTags "Highest"
-        includeTags "Blocker"
-        includeTags "High"
-    }
-}
-
-task web_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'Web'
-    }
-}
-
-task api_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'API'
     }
 }
