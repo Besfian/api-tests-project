@@ -8,9 +8,9 @@ import ru.mail.besfian.specs.Specs;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static ru.mail.besfian.tests.Tests.USER_RESPONSE_DATA;
 
 public class TestBase {
+    public  UserResponseData USER_RESPONSE_DATA = new UserResponseData();
 
 
     Specs specs = new Specs();

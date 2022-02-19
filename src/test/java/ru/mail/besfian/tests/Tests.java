@@ -15,7 +15,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.*;
 
 public class Tests extends TestBase {
-    public static final UserResponseData USER_RESPONSE_DATA = new UserResponseData();
 
     Specs specs = new Specs();
     TestData testData = new TestData();
