@@ -17,7 +17,7 @@ public class TestBase {
     Specs specs = new Specs();
 
     public UserResponseData setup() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         step("Получение userId", () -> {
             UserResponseData userResponseData = given().
                     spec(specs.requestForBookstoreToolsqa)
