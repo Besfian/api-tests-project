@@ -1,9 +1,8 @@
-package ru.mail.besfian.tests;
+package ru.mail.besfian.testsAPI;
 
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import ru.mail.besfian.lombok.UserResponseData;
 import ru.mail.besfian.specs.Specs;
 
 
