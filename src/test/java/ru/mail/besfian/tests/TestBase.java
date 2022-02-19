@@ -18,7 +18,6 @@ public class TestBase {
 
     Specs specs = new Specs();
 
-    @Test
     public UserResponseData setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         step("Получение userId", () -> {
