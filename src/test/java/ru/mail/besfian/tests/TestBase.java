@@ -2,6 +2,8 @@ package ru.mail.besfian.tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import ru.mail.besfian.lombok.UserResponseData;
 import ru.mail.besfian.specs.Specs;
 
@@ -9,13 +11,14 @@ import ru.mail.besfian.specs.Specs;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 
+
 public class TestBase {
     public  UserResponseData USER_RESPONSE_DATA = new UserResponseData();
 
 
     Specs specs = new Specs();
 
-
+    @Test
     public UserResponseData setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         step("Получение userId", () -> {
