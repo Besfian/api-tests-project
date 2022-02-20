@@ -8,9 +8,8 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = '2.17.2',
-    junitVersion = '5.8.2',
-    selenideVersion = '6.1.1'
+def junitVersion = "5.8.1",
+    allureVersion = "2.16.1"
 
 allure {
     version = allureVersion
@@ -23,20 +22,23 @@ allure {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.20'
     implementation 'io.qameta.allure:allure-java-commons:2.16.1'
-    //noinspection GradlePackageUpdate
     testImplementation(
-            "io.rest-assured:rest-assured:4.4.0",
-            "io.rest-assured:json-schema-validator:4.4.0",
-            "org.assertj:assertj-core:3.21.0",
-            "org.aeonbits.owner:owner:1.0.12",
-            "org.aspectj:aspectjweaver:1.9.7",
+            "io.rest-assured:rest-assured:4.3.1",
+            "io.rest-assured:json-schema-validator:4.3.1",
             "com.fasterxml.jackson.core:jackson-databind:2.11.2",
-            "com.codeborne:selenide:$selenideVersion",
-            "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.assertj:assertj-core:3.19.0",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "org.aspectj:aspectjweaver:1.9.6",
+            "com.codeborne:selenide:5.24.0",
+            "org.junit.jupiter:junit-jupiter-params:$junitVersion",
+            "com.jayway.jsonpath:json-path:2.6.0")
+    testRuntimeOnly(
+            "org.slf4j:slf4j-simple:1.7.29",
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.withType(JavaCompile) {
@@ -44,6 +46,7 @@ tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
+
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
